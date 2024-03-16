@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="540.0" prefWidth="583.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.zenryoku.doms.coderdojomanagementsystem.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+      <children>
+         <Label fx:id="coderDojo" alignment="CENTER" contentDisplay="CENTER" prefHeight="94.0" prefWidth="539.0" text="CoderDojo" textAlignment="CENTER">
+            <font>
+               <Font size="96.0" />
+            </font>
+         </Label>
+         <HBox alignment="CENTER" prefHeight="32.0" prefWidth="343.0">
+            <children>
+               <Label fx:id="area_ja" alignment="TOP_RIGHT" contentDisplay="CENTER" text="江別">
+                  <font>
+                     <Font size="61.0" />
+                  </font>
+               </Label>
+               <Label contentDisplay="CENTER" text="～">
+                  <font>
+                     <Font size="53.0" />
+                  </font>
+               </Label>
+               <Label fx:id="area_en" alignment="TOP_LEFT" text="Ebetsu" textAlignment="CENTER">
+                  <font>
+                     <Font size="61.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+   <VBox fx:id="res_area" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+      <children>
+         <Label text="バーコードを　   　　 ">
+            <font>
+               <Font size="61.0" />
+            </font>
+         </Label>
+         <Label text="ってしてね！">
+            <font>
+               <Font size="61.0" />
+            </font>
+            <graphic>
+               <Label text="「ピッ！」" textFill="#f20000">
+                  <font>
+                     <Font size="61.0" />
+                  </font>
+               </Label>
+            </graphic>
+         </Label>
+         <HBox alignment="CENTER">
+            <children>
+               <Label fx:id="textMeessage" text="IDを入力してね！">
+                  <font>
+                     <Font size="31.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="inputText" alignment="CENTER" promptText="0001" />
+               <Button fx:id="button" mnemonicParsing="false" onAction="#login" text="ろぐいん" />
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+   <Label fx:id="error_label">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+</VBox>
