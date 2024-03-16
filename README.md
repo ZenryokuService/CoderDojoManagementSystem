@@ -1,4 +1,4 @@
-#　CoderDojoManagementSystem
+# CoderDojoManagementSystem
 コーダードージョー管理システムとして、使用できれば良いと思い。作成しました。
 現段階では以下の機能があるだけです。
 
