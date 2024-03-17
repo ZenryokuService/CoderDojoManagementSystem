@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -40,7 +42,8 @@ public class HelloApplication extends Application {
      private void createProperties() {
         try {
             prop = new Properties();
-            prop.load(getClass().getResourceAsStream("setting.properties"));
+            InputStream in = getClass().getResourceAsStream("setting.properties");
+            prop.load(new InputStreamReader(in, "UTF-8"));
         } catch (IOException e) {
             System.out.println("setting.propertiesが読み込めませんでした。");
             e.printStackTrace();
@@ -52,12 +55,13 @@ public class HelloApplication extends Application {
     public void createConnection() {
         String dbUrl = prop.getProperty("dbUrl");
         String dbUser = prop.getProperty("dbUser");
+        String dbPass = prop.getProperty("dbPass");
         boolean isDB = new File("~dojo.mv.db").exists();
         try {
             JdbcDataSource ds = new JdbcDataSource();
             ds.setURL(dbUrl);
             ds.setUser(dbUser);
-            ds.setPassword("");
+            ds.setPassword(dbPass);
             dao = Dao.getInstance(ds.getConnection());
         } catch (SQLException se) {
             System.out.println("DB接続に失敗しました。"+ isDB);
@@ -92,6 +96,8 @@ public class HelloApplication extends Application {
         controller.setDao(dao);
         controller.setProp(prop);
         controller.setBarcodeRead();
+
+        controller.initView();
     }
 
     public static void main(String[] args) {

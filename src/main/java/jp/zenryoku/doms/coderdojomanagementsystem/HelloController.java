@@ -20,6 +20,15 @@ import java.util.Properties;
 
 public class HelloController {
     private static final int COLUMN_COUNT = 4;
+    /** タイトル部分のテキスト */
+    @FXML
+    private Label coderDojo;
+    /** 読み仮名 */
+    @FXML
+    private Label area_ja;
+    /** アルファベット */
+    @FXML
+    private Label area_en;
     @FXML
     private Button button;
     @FXML
@@ -37,6 +46,16 @@ public class HelloController {
     public HelloController() {
     }
 
+    /** 画面の初期設定 */
+    public void initView() {
+        // タイトルの設定
+        coderDojo.setText(prop.getProperty("title"));
+        // 読み
+        area_ja.setText(prop.getProperty("area_ja"));
+        // アルファベット
+        area_en.setText(prop.getProperty("dojoName_en"));
+
+    }
     /**
      * 読み込んだ、プロパティファイルを取得する。
      * @return prop `Properties
