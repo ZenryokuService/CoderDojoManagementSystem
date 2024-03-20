@@ -2,6 +2,29 @@
 コーダードージョー管理システムとして、使用できれば良いと思い。作成しました。
 現段階では以下の機能があるだけです。
 
+## インストール方法(Windowsの場合)
+次の操作を行ってください。[Mavenのインストール方法に関してはこちらに記載](https://zenryokuservice.com/wp/2023/07/15/maven%e3%82%92%e3%81%a1%e3%82%83%e3%82%93%e3%81%a8%e5%ad%a6%e7%bf%92%e3%81%99%e3%82%8b/)
+
+1. Javaのインストール
+2. Mavenのインストール
+3. Gitのインストール
+4. 環境変数の設定
+5. gitリポジトリのクローン
+コマンドプロンプトで「doms」フォルダを作成して、移動、そしてクローンを行います。
+```
+mkdir doms
+cd ./doms
+git https://github.com/ZenryokuService/CoderDojoManagementSystem.git
+```
+6. Maven Installの実行
+```
+mvn install
+```
+4. Maven execの実行
+```
+mvn exec:java
+```
+
 ## インストール方法(Linuxの場合)
 次に示すコマンドを実行してください。
 1. Javaのインストール
